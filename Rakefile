@@ -12,7 +12,7 @@ begin
     s.homepage = "http://github.com/yzhang/rseg"
     s.description = "A Chinese Word Segmentation(中文分词) routine in pure Ruby"
     s.authors = ["Yuanyi Zhang"]
-    s.files =  FileList["[A-Z]*", "{bin,dict,lib}/**/*", '.gitignore']
+    s.files =  FileList["[A-Z]*", "{bin,lib}/**/*", '.gitignore', 'dict/dict.hash']
   end
 rescue LoadError
   puts "Jeweler, or one of its dependencies, is not available. Install it with: sudo gem install technicalpickles-jeweler -s http://gems.github.com"

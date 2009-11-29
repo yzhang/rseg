@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{rseg}
-  s.version = "0.1.0"
+  s.version = "0.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Yuanyi Zhang"]
@@ -25,11 +25,7 @@ Gem::Specification.new do |s|
      "Rakefile",
      "VERSION",
      "bin/rseg",
-     "dict/cedict.zh_CN.utf8",
-     "dict/cedict.zh_TW.utf8",
      "dict/dict.hash",
-     "dict/dict.hash.wiki",
-     "dict/wikipedia.zh.utf8",
      "lib/builder/dict.rb",
      "lib/engines/dict.rb",
      "lib/engines/engine.rb",
