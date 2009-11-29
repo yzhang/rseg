@@ -2,6 +2,8 @@ Introduction
 ========
 Rseg is a Chinese Word Segmentation(中文分词) routine in pure Ruby.
 
+The algorithm is based on this article: http://xiecc.blog.163.com/blog/static/14032200671110224190/
+
 Usage
 ========
 
