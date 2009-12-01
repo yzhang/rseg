@@ -7,14 +7,36 @@ The algorithm is based on this article: http://xiecc.blog.163.com/blog/static/14
 Usage
 ========
 
-It's very easy to use:
+Rseg now support two modes: inline and C/S mode.
+
+1. Inline mode
 
 > require 'rubygems'
 > require 'rseg'
 > RSeg.segment("需要分词的文章")
 ['需要', '分词', '的', '文章']
 
-The first call to Rseg#segment will need about 30 seconds to load the dictionary, the second call will be very fast.
+The first call to Rseg#segment will need about 30 seconds to load the dictionary, the second call will be very fast, you can also call Rseg#load to load dictionaries manually.
+
+2. C/S mode
+
+$ rseg_server
+== Sinatra/0.9.4 has taken the stage on 4100
+
+This will start rseg server on http://localhost:4100
+
+You can visit it via your browser or the rseg command.
+
+$ rseg '需要分词的文章'
+需要 分词 的 文章
+
+You can also access server with the Rseg#remote_segment
+
+$ irb
+> require 'rubygems'
+> require 'rseg'
+> RSeg.remote_segment("需要分词的文章") # This will be very fast
+['需要', '分词', '的', '文章']
 
 Performance
 ========
