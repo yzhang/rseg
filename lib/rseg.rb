@@ -24,6 +24,7 @@ class Rseg
     
     def load
       Rseg.instance
+      nil
     end
     
     def remote_segment(input)
