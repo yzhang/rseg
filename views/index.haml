@@ -1,0 +1,8 @@
+#segform
+  %form{:action => '/segment', :method => 'post'}
+    %p
+      %textarea{:id => 'input', :rows => '15', :cols => '35', :name => 'input'}= @input || '输入要分词的文章'
+    %p
+      %button.negative{ :type => "submit" } 开始分词
+#segresult
+  %p= @result

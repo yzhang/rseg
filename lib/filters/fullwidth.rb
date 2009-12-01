@@ -1,5 +1,5 @@
 class Fullwidth
-  FULLWIDTH_CHARS = {'１' => '1', '２' => '2', '３' => '3', '４' => '4', '５' => '5', '６' => '6', '７' => '7', '８' => '8',
+  @@fullwidth_chars = {'１' => '1', '２' => '2', '３' => '3', '４' => '4', '５' => '5', '６' => '6', '７' => '7', '８' => '8',
                      '９' => '9', '０' => '0', 'ａ' => 'a', 'ｂ' => 'b', 'ｃ' => 'c', 'ｄ' => 'd', 'ｅ' => 'e', 'ｆ' => 'f',
                      'ｇ' => 'g', 'ｈ' => 'h', 'ｉ' => 'i', 'ｊ' => 'j', 'ｋ' => 'k', 'ｌ' => 'l', 'ｍ' => 'm', 'ｎ' => 'n',
                      'ｏ' => 'o', 'ｐ' => 'p', 'ｑ' => 'q', 'ｒ' => 'r', 'ｓ' => 's', 'ｔ' => 't', 'ｕ' => 'u', 'ｖ' => 'v',
@@ -11,7 +11,7 @@ class Fullwidth
                      
   class << self
     def filter(char)
-      FULLWIDTH_CHARS[char].nil? ? char : FULLWIDTH_CHARS[char]
+      @@fullwidth_chars[char].nil? ? char : @@fullwidth_chars[char]
     end
   end
 end

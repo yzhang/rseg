@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+$:.unshift File.expand_path(File.dirname(__FILE__))
+
+require 'rubygems'
+require 'haml'
+
+require File.join(File.dirname(__FILE__), '/../lib/rseg')
+require File.join(File.dirname(__FILE__), '/../lib/app')
+
+puts "Loading dictionaries, this will take about 30 seconds."
+puts "Please wait a moment..."
+Rseg.instance
+puts "Dictionaries loaded."
+
+App.run! :host => '127.0.0.1', :port => 4100, :environment => 'production'
+exit

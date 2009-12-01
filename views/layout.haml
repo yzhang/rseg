@@ -1,0 +1,16 @@
+!!! Strict
+%html{ :lang => "en", :"xml:lang" => "en", :xmlns => "http://www.w3.org/1999/xhtml" }
+  %head
+    %meta{ :content => "text/html; charset=utf-8", :"http-equiv" => "Content-Type" }
+    %meta{ :content => "zh_CN", :"http-equiv" => "Content-Language" }
+    %title= "Rseg中文分词"
+    %link{ :rel => 'stylesheet',  :href => '/screen.css',  :type => 'text/css', :media => "screen"} 
+    
+  %body
+    #wrap
+      #header
+        %h1= "Rseg 中文分词"
+        %address.watermark
+      #content.condensed= yield
+      #footer= "作者： 张元一 <br />EMail：zhangyuanyi#gmail.com"
+

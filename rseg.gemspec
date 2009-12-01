@@ -5,15 +5,14 @@
 
 Gem::Specification.new do |s|
   s.name = %q{rseg}
-  s.version = "0.1.1"
+  s.version = "0.1.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Yuanyi Zhang"]
-  s.date = %q{2009-11-29}
-  s.default_executable = %q{rseg}
+  s.date = %q{2009-12-01}
   s.description = %q{A Chinese Word Segmentation(中文分词) routine in pure Ruby}
   s.email = %q{zhangyuanyi@gmail.com}
-  s.executables = ["rseg"]
+  s.executables = ["rseg", "rseg_server"]
   s.extra_rdoc_files = [
     "LICENSE",
      "README"
@@ -25,7 +24,9 @@ Gem::Specification.new do |s|
      "Rakefile",
      "VERSION",
      "bin/rseg",
+     "bin/rseg_server",
      "dict/dict.hash",
+     "lib/app.rb",
      "lib/builder/dict.rb",
      "lib/engines/dict.rb",
      "lib/engines/engine.rb",
@@ -35,7 +36,10 @@ Gem::Specification.new do |s|
      "lib/filters/conjunction.rb",
      "lib/filters/fullwidth.rb",
      "lib/filters/symbol.rb",
-     "lib/rseg.rb"
+     "lib/rseg.rb",
+     "public/screen.css",
+     "views/index.haml",
+     "views/layout.haml"
   ]
   s.homepage = %q{http://github.com/yzhang/rseg}
   s.rdoc_options = ["--charset=UTF-8"]
@@ -58,9 +62,15 @@ Gem::Specification.new do |s|
     s.specification_version = 3
 
     if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
+      s.add_runtime_dependency(%q<haml>, [">= 0"])
+      s.add_runtime_dependency(%q<sinatra>, [">= 0"])
     else
+      s.add_dependency(%q<haml>, [">= 0"])
+      s.add_dependency(%q<sinatra>, [">= 0"])
     end
   else
+    s.add_dependency(%q<haml>, [">= 0"])
+    s.add_dependency(%q<sinatra>, [">= 0"])
   end
 end
 
