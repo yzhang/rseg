@@ -1,6 +1,6 @@
 require 'sinatra/base'
 
-class App < Sinatra::Default
+class App < Sinatra::Base
   set :root,   File.dirname(__FILE__) + "/.."
   set :app_file, __FILE__
 
