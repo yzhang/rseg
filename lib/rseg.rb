@@ -15,8 +15,14 @@ require File.join(File.dirname(__FILE__), 'filters/conjunction')
 
 class Rseg
   include Singleton
+  include RsegEngine
+  include RsegFilter
   
   class << self
+    def dict_path=(path)
+      RsegEngine::Dict.dict_path = path
+    end
+    
     def segment(input)
       Rseg.instance.input = input
       Rseg.instance.segment
