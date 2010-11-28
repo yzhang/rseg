@@ -1,8 +1,19 @@
 class Dict < Engine
-  @@root = nil
+  @@root      = nil
+  @@dict_path = File.join(File.dirname(__FILE__), '../../dict/dict.hash')
+
+  class << self
+    def dict_path=(path)
+      @@dict_path = path
+    end
+    
+    def dict_path
+      @@dict_path
+    end
+  end
   
   def initialize
-    @@root ||= load_dict(dict_path)
+    @@root ||= load_dict(@@dict_path)
     @word = ''
     @node = @@root
     super
@@ -34,9 +45,5 @@ class Dict < Engine
   private
   def load_dict(path)
     File.open(path, "rb") {|io| Marshal.load(io)}
-  end
-  
-  def dict_path
-    File.join(File.dirname(__FILE__), '../../dict/dict.hash')
   end
 end
