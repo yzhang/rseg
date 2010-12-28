@@ -56,7 +56,7 @@ class Rseg
   end
   
   def segment
-    @words.clear
+    @words = []
     
     @input.chars.each do |origin|
       char = filter(origin)
