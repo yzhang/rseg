@@ -13,7 +13,7 @@ Rseg now support two modes: inline and C/S mode.
 
 > require 'rubygems'
 > require 'rseg'
-> RSeg.segment("需要分词的文章")
+> Rseg.segment("需要分词的文章")
 ['需要', '分词', '的', '文章']
 
 The first call to Rseg#segment will need about 30 seconds to load the dictionary, the second call will be very fast, you can also call Rseg#load to load dictionaries manually.
@@ -35,7 +35,7 @@ You can also access server with the Rseg#remote_segment
 $ irb
 > require 'rubygems'
 > require 'rseg'
-> RSeg.remote_segment("需要分词的文章") # This will be very fast
+> Rseg.remote_segment("需要分词的文章") # This will be very fast
 ['需要', '分词', '的', '文章']
 
 Performance
