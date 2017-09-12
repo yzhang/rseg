@@ -45,7 +45,8 @@ module RsegEngine
   
     private
     def load_dict(path)
-      File.open(path, "rb") {|io| Marshal.load(io)}
+      force_utf8 = Proc.new {|v| v.is_a?(String) ? v.force_encoding('utf-8') : v} # fix encoding for ruby version >= 1.9
+      File.open(path, "rb") {|io| Marshal.load(io, force_utf8)}
     end
   end
 end
